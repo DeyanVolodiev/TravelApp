@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -46,8 +47,8 @@
                     android:text="@string/cityDescription"
                     android:textAppearance="?attr/textAppearanceBody2"
                     android:textColor="?android:attr/textColorSecondary" />
-            </LinearLayout>
 
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -71,6 +72,21 @@
                     android:text="@string/cityCardAddBtn" />
             </LinearLayout>
 
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_centerInParent="true">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnToLandmarksActivity"
+                    style="?attr/borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:text="@string/cityCardToLandmarksActivityBtn" />
+            </RelativeLayout>
+
             <View
                 android:id="@+id/divider"
                 android:layout_width="match_parent"
@@ -81,16 +97,17 @@
                 android:id="@+id/txtLandMarksTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:paddingLeft="10dp"
-                android:text="Landmarks:"
-                android:textSize="25dp" />
+                android:layout_marginStart="20dp"
+                android:paddingStart="10dp"
+                android:text="@string/cityCardToLandmarksActivityBtn"
+                android:textSize="25sp"
+                tools:ignore="RtlSymmetry" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvLandmarks"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingLeft="10dp" />
+                android:paddingStart="10dp" />
 
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>

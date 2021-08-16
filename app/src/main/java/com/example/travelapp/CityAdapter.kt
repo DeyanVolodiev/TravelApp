@@ -2,7 +2,7 @@ package com.example.travelapp
 
 import android.app.Dialog
 import android.content.Context
-import android.util.Log
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,6 +17,10 @@ import kotlinx.android.synthetic.main.create_landmark_dialog.btnAddLandmarkCance
 import kotlinx.android.synthetic.main.create_landmark_dialog.txtAddLandmarkName
 import kotlinx.android.synthetic.main.edit_description_dialog.*
 import kotlinx.android.synthetic.main.item_city.view.*
+import android.os.Bundle
+
+
+
 
 class CityAdapter(
   private val context: Context,
@@ -34,6 +38,10 @@ class CityAdapter(
         false
       )
     )
+  }
+
+  companion object {
+    const val CITY_DETAILED_TITLE = "title"
   }
 
   fun addCity(cityName: String): Long {
@@ -130,6 +138,22 @@ class CityAdapter(
         rvLandmarks.visibility = View.GONE
 
         currentCity.areLandmarksVisible = false
+      }
+
+      /**
+       * Takes user to another activity with the city's landmarks
+       */
+      btnToLandmarksActivity.setOnClickListener{
+        val intent = Intent(
+          context,
+          CityDetailedActivity::class.java
+        )
+        intent.putExtra(CITY_DETAILED_TITLE, currentCity.name)
+
+        //TODO make this with a lambda function i guess
+        intent.putExtra("landmarkObject", currentCityLandmarks[0])
+
+        context.startActivity(intent)
       }
 
       /***

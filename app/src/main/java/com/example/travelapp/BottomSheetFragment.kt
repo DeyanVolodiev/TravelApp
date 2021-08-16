@@ -1,5 +1,6 @@
 package com.example.travelapp
 
+import android.app.Activity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +9,8 @@ import android.widget.Toast
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import kotlinx.android.synthetic.main.bottomsheet_fragment.*
 
-class BottomSheetFragment(Adapter: CityAdapter) : BottomSheetDialogFragment() {
+class BottomSheetFragment(Adapter: CityAdapter, private val parent: MainActivity) :
+  BottomSheetDialogFragment() {
   override fun onCreateView(
     inflater: LayoutInflater,
     container: ViewGroup?,
@@ -35,6 +37,8 @@ class BottomSheetFragment(Adapter: CityAdapter) : BottomSheetDialogFragment() {
         }
         txtAddCityNameLayout.error = null
         txtAddCityName.text?.clear()
+
+        parent.areCitiesInList()
 
         dismiss()
       }

@@ -14,19 +14,11 @@ class MainActivity : AppCompatActivity() {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
 
-    val cityAdapter = CityAdapter(this, getCitiesList(), getLandmarksList())
+    cityAdapter = CityAdapter(this, getCitiesList(), getLandmarksList())
 
-    if (getCitiesList().size > 0) {
-      tvCityListIsEmpty.visibility = View.INVISIBLE
+    areCitiesInList()
 
-      rvCityItems.layoutManager = LinearLayoutManager(this)
-
-      rvCityItems.adapter = cityAdapter
-    } else {
-      tvCityListIsEmpty.visibility = View.VISIBLE
-    }
-
-    val bottomSheetFragment = BottomSheetFragment(cityAdapter)
+    val bottomSheetFragment = BottomSheetFragment(cityAdapter,this)
     fabAddCity.setOnClickListener {
       bottomSheetFragment.show(supportFragmentManager, "BottomSheetDialog")
     }
@@ -36,6 +28,18 @@ class MainActivity : AppCompatActivity() {
      */
     alabala.setOnClickListener {
       alabala.text = "${cityAdapter.cities} ${cityAdapter.landmarks}"
+    }
+  }
+
+  fun areCitiesInList(){
+    if (getCitiesList().size > 0) {
+      tvCityListIsEmpty.visibility = View.INVISIBLE
+
+      rvCityItems.layoutManager = LinearLayoutManager(this)
+
+      rvCityItems.adapter = cityAdapter
+    } else {
+      tvCityListIsEmpty.visibility = View.VISIBLE
     }
   }
 

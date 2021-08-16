@@ -6,7 +6,9 @@
     <string name="cityDescription">City Description</string>
     <string name="addCityButton">Create City</string>
 
-    <string name="cityCardEditBtn">edit </string>
+    <string name="cityCardToLandmarksActivityBtn">Landmarks</string>
+    <string name="landmarksToCityActivityBtn">Cities</string>
+    <string name="cityCardEditBtn">edit</string>
     <string name="cityCardAddBtn">add landmark</string>
 
     <string name="addCityError">Input a City Name!</string>
