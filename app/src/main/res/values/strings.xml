@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Travel App</string>
+    <string name="noCities">There Are No Cities in The App Yet.</string>
+
+    <string name="addCityLabel">City Name</string>
+    <string name="cityDescription">City Description</string>
+    <string name="addCityButton">Create City</string>
+
+    <string name="cityCardEditBtn">edit </string>
+    <string name="cityCardAddBtn">add landmark</string>
+
+    <string name="addCityError">Input a City Name!</string>
+
+    <string name="addLandmarkDialogTitle">Create a Landmark</string>
+    <string name="addLandmarkDialogLandmark">Landmark Name</string>
+    <string name="addLandmarkDialogDescription">Landmark Description</string>
+
+    <string name="editDescriptionDialogTitle">Edit City</string>
+    <string name="editNameLabel">City Name</string>
+    <string name="editDescriptionLabel">City Description</string>
+
+    <string name="PositiveButton">Add</string>
+    <string name="NegativeButton">Cancel</string>
+    <string name="PositiveButtonDelete">Delete</string>
+    <string name="ConfirmDialogTitle">Delete Item?</string>
+</resources>
