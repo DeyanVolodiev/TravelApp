@@ -1,5 +1,6 @@
 package com.example.travelapp
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,7 +12,7 @@ import kotlinx.android.synthetic.main.item_landmark.view.*
 
 
 class LandmarksAdapter(
-  private var parentAdapter: CityAdapter,
+  private val context: Context,
   private var landmarks: MutableList<Landmark>
 ) : RecyclerView.Adapter<LandmarksAdapter.LandmarksViewHolder>() {
 
@@ -25,6 +26,20 @@ class LandmarksAdapter(
         false
       )
     )
+  }
+
+  private fun removeLandmark(landmarkToRemove: Landmark): Int {
+    val databaseHandler = DatabaseHandler(context)
+    val status =
+      databaseHandler.deleteLandmark(landmarkToRemove)
+
+    if (status > -1) {
+      landmarks =
+        landmarks.filter { landmark -> landmark.id != landmarkToRemove.id } as MutableList<Landmark>
+
+      notifyDataSetChanged()
+    }
+    return status
   }
 
   override fun onBindViewHolder(holder: LandmarksViewHolder, position: Int) {
@@ -43,7 +58,7 @@ class LandmarksAdapter(
           .setPositiveButton(resources.getString(R.string.PositiveButtonDelete)) { dialog, which ->
             landmarks =
               landmarks.filter { landmark -> landmark != currentLandmark } as MutableList<Landmark>
-            parentAdapter.removeLandmark(currentLandmark)
+            removeLandmark(currentLandmark)
           }
           .setNegativeButton(resources.getString(R.string.NegativeButton)) { dialog, which ->
             dialog?.cancel()

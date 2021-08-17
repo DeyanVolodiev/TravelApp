@@ -36,7 +36,8 @@
                     android:paddingTop="10dp"
                     android:text="@string/addCityLabel"
                     android:textAppearance="?attr/textAppearanceHeadline6"
-                    android:textSize="30sp" />
+                    android:textSize="30sp"
+                    tools:ignore="RtlSymmetry" />
 
                 <TextView
                     android:id="@+id/tvCityDescription"
@@ -46,7 +47,8 @@
                     android:paddingStart="20dp"
                     android:text="@string/cityDescription"
                     android:textAppearance="?attr/textAppearanceBody2"
-                    android:textColor="?android:attr/textColorSecondary" />
+                    android:textColor="?android:attr/textColorSecondary"
+                    tools:ignore="RtlSymmetry" />
 
             </LinearLayout>
 
@@ -74,8 +76,7 @@
 
             <RelativeLayout
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_centerInParent="true">
+                android:layout_height="fill_parent">
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnToLandmarksActivity"
@@ -87,27 +88,27 @@
                     android:text="@string/cityCardToLandmarksActivityBtn" />
             </RelativeLayout>
 
-            <View
-                android:id="@+id/divider"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="?android:attr/listDivider" />
+<!--            <View-->
+<!--                android:id="@+id/divider"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="1dp"-->
+<!--                android:background="?android:attr/listDivider" />-->
 
-            <TextView
-                android:id="@+id/txtLandMarksTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:paddingStart="10dp"
-                android:text="@string/cityCardToLandmarksActivityBtn"
-                android:textSize="25sp"
-                tools:ignore="RtlSymmetry" />
+<!--            <TextView-->
+<!--                android:id="@+id/txtLandMarksTitle"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="20dp"-->
+<!--                android:paddingStart="10dp"-->
+<!--                android:text="@string/cityCardToLandmarksActivityBtn"-->
+<!--                android:textSize="25sp"-->
+<!--                tools:ignore="RtlSymmetry" />-->
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvLandmarks"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingStart="10dp" />
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/rvLandmarks"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:paddingStart="10dp" />-->
 
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>

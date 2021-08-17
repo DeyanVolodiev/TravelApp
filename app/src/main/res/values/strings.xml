@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Travel App</string>
     <string name="noCities">There Are No Cities in The App Yet.</string>
+    <string name="noLandmarks">There Are No Landmarks in This City Yet.</string>
+
+    <string name="fabDescription">Add a new city</string>
 
     <string name="addCityLabel">City Name</string>
     <string name="cityDescription">City Description</string>

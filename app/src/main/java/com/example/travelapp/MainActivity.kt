@@ -18,6 +18,9 @@ class MainActivity : AppCompatActivity() {
 
     areCitiesInList()
 
+    /**
+     * Fragment for adding cities
+     */
     val bottomSheetFragment = BottomSheetFragment(cityAdapter,this)
     fabAddCity.setOnClickListener {
       bottomSheetFragment.show(supportFragmentManager, "BottomSheetDialog")
